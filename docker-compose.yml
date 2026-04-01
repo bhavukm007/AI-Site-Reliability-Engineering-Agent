@@ -1,0 +1,21 @@
+services:
+  service_a:
+    build: ./services/services_a
+    ports:
+      - "8001:8001"
+
+  service_b:
+    build: ./services/services_b
+    ports:
+      - "8002:8002"
+
+  service_c:
+    build: ./services/services_c
+    ports:
+      - "8003:8003"
+
+  api:
+    build: .
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI SRE Agent</title>
+</head>
+<body>
+<h1>AI DevOps Agent</h1>
+<textarea id="logs" rows="10" cols="50"></textarea><br>
+<button onclick="analyze()">Analyze</button>
+<pre id="output"></pre>
+
+<script>
+async function analyze() {
+    const logs = document.getElementById("logs").value;
+
+    const res = await fetch("http://127.0.0.1:8000/analyze", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({logs})
+    });
+
+    const data = await res.json();
+    document.getElementById("output").innerText = JSON.stringify(data, null, 2);
+}
+</script>
+</body>
+</html>
