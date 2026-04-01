@@ -1,4 +1,4 @@
-# 🚀 MetaHack: AI-Powered DevOps & SRE Agent
+# 🚀 AI-Powered SRE Agent
 
 ## 📌 Overview
 MetaHack is an AI-powered DevOps and Site Reliability Engineering (SRE) assistant that automates debugging, log analysis, and incident resolution.
