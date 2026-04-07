@@ -1,0 +1,21 @@
+[project]
+name = "sre-env"
+version = "0.1.0"
+description = "AI SRE Troubleshooting Environment"
+authors = [
+    {name = "Bhavuk"}
+]
+
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "openai",
+    "openenv-core",
+    "pydantic",
+    "numpy"
+]
+
+[tool.openenv]
+entry_point = "env.sre_env:SREEnv"
+[project.scripts]
+server = "server.app:main"

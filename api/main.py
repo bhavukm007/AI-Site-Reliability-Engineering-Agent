@@ -26,3 +26,6 @@ def auto_analyze():
             logs += f.read() + "\n"
 
     return run_agent(logs)
+@app.post("/reset")
+def reset_env():
+    return {"status": "ok"}

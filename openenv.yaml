@@ -1,0 +1,43 @@
+id: sre_env
+name: AI SRE Troubleshooting Environment
+
+entry_point: env.sre_env:SREEnv
+
+max_steps: 5
+
+# 🔹 TASK DEFINITIONS
+tasks:
+  - name: easy
+    description: Single database failure
+
+  - name: medium
+    description: Database + timeout issue
+
+  - name: hard
+    description: Cascading service failures
+
+  - name: bad_commit
+    description: Deployment failure scenario
+
+
+# 🔹 OBSERVATION SPACE
+observation_space:
+  type: dict
+  properties:
+    logs:
+      type: string
+    status:
+      type: string
+
+
+# 🔹 ACTION SPACE
+action_space:
+  type: discrete
+  actions:
+    - restart_db
+    - scale_service
+    - restart_service
+
+
+# 🔹 REWARD RANGE
+reward_range: [0, 1]
